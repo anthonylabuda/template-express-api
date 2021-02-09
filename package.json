@@ -1,0 +1,19 @@
+{
+  "name": "template-express-api",
+  "version": "1.0.0",
+  "description": "Template for a RESTful API built on Express.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonylabuda/template-express-api.git"
+  },
+  "author": "Anthony LaBuda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthonylabuda/template-express-api/issues"
+  },
+  "homepage": "https://github.com/anthonylabuda/template-express-api#readme"
+}
