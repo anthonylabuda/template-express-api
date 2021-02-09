@@ -7,8 +7,8 @@ Template for a RESTful API built on Express.js
 - [Directory Structure](#directory-structure)
 - [Environment Variables](#environment-variables)
 - [Packages](#packages)
-    - [Dependencies](#dependencies)
-    - [Development Dependencies](#development-dependencies)
+  - [Dependencies](#dependencies)
+  - [Development Dependencies](#development-dependencies)
 
 ## Directory Structure
 
@@ -40,9 +40,10 @@ For this project, environment variables are injected into the application throug
 
 For this project, the following environment variables are utilized:
 
-| Environment Variable | Description |
-| -------------------- | ----------- |
-|                      |             |
+| Environment Variable | Description                      |
+| -------------------- | -------------------------------- |
+| APP_BASE_URL         | Base URL for the application     |
+| SERVER_PORT          | Port for the server to listen on |
 
 ## Packages
 

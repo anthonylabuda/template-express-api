@@ -4,6 +4,10 @@
   "description": "Template for a RESTful API built on Express.js",
   "main": "server.js",
   "scripts": {
+    "build": "babel src -d dist && npm run bundle",
+    "bundle": "cp package.json dist/",
+    "dev": "nodemon --exec babel-node src/server.js",
+    "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
