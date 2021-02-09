@@ -2,11 +2,43 @@
 
 Template for a RESTful API built on Express.js
 
+## Table of Contents
+
+- [Directory Structure](#directory-structure)
+- [Environment Variables](#environment-variables)
+- [Packages](#packages)
+    - [Dependencies](#dependencies)
+    - [Development Dependencies](#development-dependencies)
+
+## Directory Structure
+
+For this project, the following directory structure is utilized:
+
+```text
+template-express-api
+├── src/
+│   ├── apis/
+│   ├── middlewares/
+│   ├── utilities/
+│   ├── api.js
+│   ├── middlewares.js
+│   ├── routers.js
+│   ├── server.js
+│   └── settings.js
+├── .babelrc
+├── .editorconfig
+├── .gitignore
+├── .prettierrc
+├── nodemon.json
+├── package.json
+└── README.md
+```
+
 ## Environment Variables
 
 For this project, environment variables are injected into the application through the use via `nodemon.json`.
 
-The following environment variables are required for this project:
+For this project, the following environment variables are utilized:
 
 | Environment Variable | Description |
 | -------------------- | ----------- |
@@ -14,7 +46,7 @@ The following environment variables are required for this project:
 
 ## Packages
 
-For this project, the following dependencies are utilized:
+For this project, the following packages are utilized:
 
 ### Dependencies
 
