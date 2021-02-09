@@ -2,7 +2,19 @@
 
 Template for a RESTful API built on Express.js
 
+## Environment Variables
+
+For this project, environment variables are injected into the application through the use via `nodemon.json`.
+
+The following environment variables are required for this project:
+
+| Environment Variable | Description |
+| -------------------- | ----------- |
+|                      |             |
+
 ## Packages
+
+For this project, the following dependencies are utilized:
 
 ### Dependencies
 
