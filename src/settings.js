@@ -8,6 +8,8 @@ const api = {
 
 const app = {
   baseUrl: process.env.APP_BASE_URL,
+  environment: process.env.NODE_ENV || `development`,
+  timezone: `America/Chicago`
 };
 
 const middlewares = {
@@ -33,6 +35,7 @@ const middlewares = {
   morgan: {
     format: `dev`,
   },
+  winston: {},
   xssClean: {
     options: {},
   },

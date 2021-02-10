@@ -1,5 +1,7 @@
 import httpStatus from "http-status";
 
+import logger from "./logger";
+
 import ApiError from "../utilities/ApiError";
 
 const handleNotFoundError = (request, response, next) => {
@@ -7,8 +9,7 @@ const handleNotFoundError = (request, response, next) => {
 };
 
 const handleUnexpectedApiError = (error, request, response, next) => {
-  console.error(`[ERROR] :: An unexpected API error occurred`);
-  console.error(`[ERROR] :: handleApiError :: ${error}`);
+  logger.error({ message: `An unexpected API error occurred`, source: `api`, error });
 
   response.status(error.status || httpStatus.INTERNAL_SERVER_ERROR);
   response.send();

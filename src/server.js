@@ -3,9 +3,11 @@ import http from "http";
 import api from "./api";
 import settings from "./settings";
 
+import logger from "./middlewares/logger";
+
 const handleExit = () => {
-  console.log(`[SERVER] :: Shutting down server...`);
-  console.log(`[SERVER] :: Goodbye...`);
+  logger.info({ message: `Shutting down server`, source: `server` });
+  logger.info({ message: `Goodbye`, source: `server` });
 
   if (server) {
     server.close(() => {
@@ -17,25 +19,23 @@ const handleExit = () => {
 };
 
 const handleInterrupt = () => {
-  console.log(`[SERVER] :: Received interruption request`);
+  logger.info({ message: `Received interruption request`, source: `server` });
 
   handleExit();
 };
 
 const handleListen = () => {
-  console.log(`[SERVER] :: Listening on port: ${settings.server.port}`);
+  logger.info({ message: `Listening on port ${settings.server.port}`, source: `server` });
 };
 
 const handleUncaughtException = (error) => {
-  console.error(`[ERROR] :: An uncaught server exception occurred`);
-  console.error(`[ERROR] :: ${error}`);
+  logger.error({ message: `An uncaught server exception occurred`, source: `server`, error });
 
   handleExit();
 };
 
-const handleUnhandledRejection = () => {
-  console.error(`[ERROR] :: An unhandled server rejection occurred`);
-  console.error(`[ERROR] :: ${error}`);
+const handleUnhandledRejection = (error) => {
+  logger.error({ message: `An unhandled server rejection occurred`, source: `server`, error });
 
   handleExit();
 };
