@@ -28,14 +28,14 @@ const handleListen = () => {
   logger.info({ message: `Listening on port ${settings.server.port}`, source: `server` });
 };
 
-const handleUncaughtException = (error) => {
-  logger.error({ message: `An uncaught server exception occurred`, source: `server`, error });
+const handleUncaughtException = () => {
+  logger.error({ message: `An uncaught server exception occurred`, source: `server` });
 
   handleExit();
 };
 
-const handleUnhandledRejection = (error) => {
-  logger.error({ message: `An unhandled server rejection occurred`, source: `server`, error });
+const handleUnhandledRejection = () => {
+  logger.error({ message: `An unhandled server rejection occurred`, source: `server` });
 
   handleExit();
 };

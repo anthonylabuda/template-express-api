@@ -16,6 +16,8 @@ For this project, the following directory structure is utilized:
 
 ```text
 template-express-api
+├── dist/
+├── logs/
 ├── src/
 │   ├── apis/
 │   ├── middlewares/

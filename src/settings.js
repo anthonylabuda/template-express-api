@@ -1,3 +1,8 @@
+import moment from "moment";
+import tz from "moment-timezone";
+import winston from "winston";
+import winstonDailyRotateFile from "winston-daily-rotate-file";
+
 const api = {
   version: {
     major: 1,
@@ -9,7 +14,6 @@ const api = {
 const app = {
   baseUrl: process.env.APP_BASE_URL,
   environment: process.env.NODE_ENV || `development`,
-  timezone: `America/Chicago`
 };
 
 const middlewares = {
@@ -33,9 +37,23 @@ const middlewares = {
     options: {},
   },
   morgan: {
-    format: `dev`,
+    format: `[:method] :url :status :response-time ms`,
   },
-  winston: {},
+  winston: {
+    options: {
+      format: winston.format.combine(
+        winston.format.timestamp({ format: moment().tz(`America/Chicago`).format() }),
+        winston.format.json()
+      ),
+      level: `info`,
+      transports: [
+        new winstonDailyRotateFile({
+          datePattern: `YYYY-MM-DD`,
+          filename: `logs/%DATE%.log`,
+        }),
+      ],
+    },
+  },
   xssClean: {
     options: {},
   },
